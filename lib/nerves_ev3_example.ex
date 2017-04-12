@@ -12,7 +12,7 @@ defmodule NervesEv3Example do
     start_wifi()
 
     # This won't get annoying...
-    spawn fn -> System.cmd("espeak", ["Good morning!"]) end
+    # spawn fn -> System.cmd("espeak", ["Good morning!"]) end
 
     # Define workers and child supervisors to be supervised
     children = [

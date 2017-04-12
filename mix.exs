@@ -19,19 +19,20 @@ defmodule NervesEv3Example.Mixfile do
 
   def application do
     [mod: {NervesEv3Example, []},
-     applications: [:logger, :logger_file_backend, :nerves_interim_wifi, :ex_ncurses, :runtime_tools]]
+     applications: [:logger, :logger_file_backend, :nerves_interim_wifi, :ex_ncurses, :runtime_tools, :nerves_firmware_http]]
   end
 
   defp deps do
-    [{:nerves, "~> 0.4", runtime: false},
+    [{:nerves, "~> 0.5", runtime: false},
      {:logger_file_backend, "~> 0.0.9"},
      {:nerves_interim_wifi, "~> 0.0.1"},
+     {:nerves_firmware_http, "~> 0.3.1"},
      {:ex_ncurses, github: "jfreeze/ex_ncurses", ref: "2fd3ecb1c8a1c5e04ddb496bb8d57f30b619f59e"},
     ]
   end
 
   def system do
-    [{:nerves_system_ev3, "~> 0.10.2", runtime: false}]
+    [{:nerves_system_ev3, "~> 0.10", runtime: false}]
   end
 
   def aliases do
